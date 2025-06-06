@@ -21,6 +21,7 @@ async def identify_mix(request: MixRequest):
 
     command = [
         "yt-dlp",
+        "--force-ipv4",                      # ✅ This line added to help bypass 429 errors
         "-x", "--audio-format", "mp3",
         "-o", output_filename,
         mix_url
